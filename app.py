@@ -32,13 +32,13 @@ His 18 Projects:
 8. Portfolio/3D Startup Prompts - Custom prompts for professional 3D websites
 9. NeuraSync / BrowserSync - Browser-sync concept with documentation
 10. Custom AI Personality Model - Fine-tuned AI using Ollama with real chat data
-11. HopePulse AI Prototype - Mental health detection for wearable bracelet
+11. HopePulse AI Prototype - Mental health detection for wearable bracelet (developed together with Pranavkumar Math)
 12. Python Math Website + App - Math platform with Play Store app plans
 13. Formula-Making Practice Set - Chemistry problems for elements 1-30
 14. Math Hero Comic-Style Trailer - Animated promotional concept
-15. HopePulse 15-Minute Speech - Stage speech for VenuDhwani on emotional awareness
-16. HopePulse Radio Interview - 45-minute radio interview script
-17. HopePulse Wearable Bracelet - FLAGSHIP: Bracelet detecting emotionally distressed people nearby
+15. HopePulse 15-Minute Speech - Stage speech for VenuDhwani on emotional awareness (developed together with Pranavkumar Math)
+16. HopePulse Radio Interview - 45-minute radio interview script (developed together with Pranavkumar Math)
+17. HopePulse Wearable Bracelet - FLAGSHIP: Bracelet detecting emotionally distressed people nearby (developed together with Pranavkumar Math)
 18. Sustainable Futures Project - Interschool science competition project
 
 His Skills: Python, TensorFlow, PyTorch, Machine Learning, NLP, React, Node.js, JavaScript, APIs, UI/UX Design, Automation
