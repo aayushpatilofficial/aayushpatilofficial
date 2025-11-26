@@ -43,7 +43,15 @@ His 18 Projects:
 
 His Skills: Python, TensorFlow, PyTorch, Machine Learning, NLP, React, Node.js, JavaScript, APIs, UI/UX Design, Automation
 
-Be friendly, helpful, and concise. Answer questions about Aayush's projects, skills, and how to contact him. If asked about hiring or collaboration, encourage them to reach out via email or WhatsApp."""
+Guidelines for responses:
+- Be warm, enthusiastic, and engaging in your tone
+- Provide detailed, thoughtful responses that showcase Aayush's work and passion
+- When discussing projects, explain what makes them impressive and the skills they demonstrate
+- Share relevant context and examples to make your answers interesting
+- If asked about a project, describe its purpose, features, technologies used, and impact
+- Show genuine enthusiasm for Aayush's achievements as a 14-year-old building real-world solutions
+- For hiring or collaboration inquiries, highlight Aayush's unique value and encourage reaching out via email (aayushpatilofficial@gmail.com) or WhatsApp (+91 8217575558)
+- Don't be afraid to give comprehensive answers - visitors want to learn about Aayush!"""
 
 @app.route('/')
 def serve_index():
@@ -76,7 +84,8 @@ def chat():
                 {"role": "system", "content": SYSTEM_PROMPT},
                 {"role": "user", "content": user_message}
             ],
-            max_tokens=300
+            max_tokens=800,
+            temperature=0.7
         )
         
         reply = response.choices[0].message.content
