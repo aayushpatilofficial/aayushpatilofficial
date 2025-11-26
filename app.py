@@ -58,6 +58,7 @@ def chat():
     openai_client = get_openai_client()
     
     if not openai_client:
+        print("ERROR: OpenAI client not initialized - API key missing or invalid")
         return jsonify({'error': 'AI service not configured. Please add your OpenAI API key.'}), 503
     
     try:
@@ -66,6 +67,8 @@ def chat():
         
         if not user_message:
             return jsonify({'error': 'Message is required'}), 400
+        
+        print(f"Sending message to OpenAI: {user_message[:50]}...")
         
         response = openai_client.chat.completions.create(
             model="gpt-4o-mini",
@@ -77,9 +80,11 @@ def chat():
         )
         
         reply = response.choices[0].message.content
+        print(f"Got reply from OpenAI: {reply[:50]}...")
         return jsonify({'reply': reply})
     
     except Exception as e:
+        print(f"ERROR in chat: {type(e).__name__}: {str(e)}")
         return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
