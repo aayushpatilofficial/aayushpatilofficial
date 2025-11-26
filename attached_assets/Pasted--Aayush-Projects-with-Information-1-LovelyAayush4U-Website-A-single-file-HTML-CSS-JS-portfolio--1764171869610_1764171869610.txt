@@ -1,0 +1,72 @@
+✅ Aayush — Projects with Information
+1. LovelyAayush4U Website
+
+A single-file HTML/CSS/JS portfolio website with advanced animations, interactive UI, and YouTube integration. Designed to look like a big-company professional site while staying in one file.
+
+2. Aswathama Classes Website
+
+A gift website for your tuition sir with a modern Windows-11-style startup animation, class details, and social media integration.
+
+3. V Network Regd – News Website
+
+A complete news publishing website for articles, updates, and announcements.
+
+4. NGO Connector Website
+
+A platform connecting NGOs with people. Features include: search by category/city, WhatsApp/phone contact, donation options, and admin features to add/update NGO listings.
+
+5. Class-Only Website (Flask + PostgreSQL)
+
+A secure platform for your class with password protection, user login, and an admin panel to upload new resources and notes.
+
+6. Advanced Math Quiz Website (Django)
+
+A full professional learning platform with categories, progress tracking, leaderboard, badges, notifications, user profiles, and admin panel. Designed with animations and weekly updates.
+
+7. Advanced Math Proof Website (Flask)
+
+A website built to upload and showcase math proofs. Fully functional and ready for hosting.
+
+8. Portfolio/3D Startup Website Prompts
+
+Multiple custom prompts created to generate professional, 3D-styled, animated, startup-level portfolio websites.
+
+9. NeuraSync / BrowserSync Project
+
+Your own browser-sync concept with documentation and a project file generated via Gamma.
+
+10. Custom AI Personality Model (Ollama)
+
+Experimented with inserting real chat data into Modelfiles to fine-tune a custom AI personality model.
+
+11. HopePulse AI Prototype
+
+Initial AI idea for integrating mental-health detection into your wearable bracelet concept.
+
+12. Python Advanced Math Website + Mobile App Plan
+
+A Python-based advanced math question website with plans for a Play Store app. Includes animations, professional UI, and AI integration ideas.
+
+13. Formula-Making Practice Set (Class 9 Chemistry)
+
+Created multiple custom formula-making numerical problems for chemistry elements 1–30.
+
+14. Math Hero Comic-Style Trailer
+
+A promotional comic-style animated trailer concept for the Advanced Math Quiz platform.
+
+15. HopePulse 15-Minute Speech
+
+A stage speech created with your cousin for VenuDhwani covering emotional awareness and HopePulse innovation.
+
+16. HopePulse 45-Minute Radio Interview Script
+
+A full conversational script for a long-form radio interview about HopePulse.
+
+17. HopePulse Wearable Bracelet
+
+Your flagship innovation: a bracelet that detects people nearby who may be emotionally distressed or suicidal and alerts the wearer with a gentle pulse.
+
+18. Science Event Project – Sustainable Futures
+
+Your interschool science competition project based on the theme “Sustainable Futures.”

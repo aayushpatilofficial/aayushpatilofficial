@@ -483,59 +483,56 @@
 
     .portfolio-grid {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 5rem;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
       margin-top: 3rem;
     }
 
-    .project {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 4rem;
-      align-items: center;
-      padding: 3.5rem 0;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-    }
-
-    .project:last-child {
-      border-bottom: none;
-    }
-
-    .project:hover .project-image {
-      transform: scale(1.03);
-    }
-
-    .project-image {
-      width: 100%;
-      aspect-ratio: 16/10;
-      background: linear-gradient(135deg, #f5f5f5 0%, #fafafa 100%);
+    .project-card {
+      background: #fff;
       border-radius: 12px;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+      border-color: rgba(0, 0, 0, 0.15);
+    }
+
+    .project-icon {
+      width: 100%;
+      height: 140px;
+      background: linear-gradient(135deg, #f5f5f5 0%, #fafafa 100%);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 5rem;
-      transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-      border: 1px solid rgba(0, 0, 0, 0.06);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      font-size: 3.5rem;
+    }
+
+    .project-content {
+      padding: 1.5rem;
     }
 
     .project-content h3 {
-      font-size: 2rem;
-      margin-bottom: 1.2rem;
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
       font-weight: 700;
-      letter-spacing: -0.8px;
+      letter-spacing: -0.3px;
     }
 
     .project-services {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.8rem;
-      margin-bottom: 2rem;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
     }
 
     .service-badge {
-      font-size: 0.75rem;
-      padding: 0.5rem 1rem;
+      font-size: 0.65rem;
+      padding: 0.35rem 0.7rem;
       background: rgba(0, 0, 0, 0.04);
       color: #666;
       border-radius: 3px;
@@ -545,30 +542,56 @@
       border: 1px solid rgba(0, 0, 0, 0.08);
     }
 
-    .project-desc {
-      color: #666;
-      line-height: 1.85;
-      margin-bottom: 2rem;
-      font-size: 1rem;
+    .project-short-desc {
+      color: #888;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
 
     .project-link {
       display: inline-flex;
       align-items: center;
-      gap: 0.6rem;
+      gap: 0.5rem;
       font-weight: 700;
-      font-size: 0.95rem;
+      font-size: 0.85rem;
       color: #000;
       letter-spacing: 0.3px;
+      cursor: pointer;
+      background: none;
+      padding: 0;
     }
 
     .project-link::after {
-      content: '→';
+      content: '↓';
       transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
-    .project:hover .project-link::after {
-      transform: translateX(6px);
+    .project-link.active::after {
+      transform: rotate(180deg);
+    }
+
+    .project-details {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+      background: #f9f9f9;
+      padding: 0 1.5rem;
+    }
+
+    .project-details.active {
+      max-height: 300px;
+      padding: 1.5rem;
+    }
+
+    .project-details p {
+      color: #555;
+      line-height: 1.8;
+      font-size: 0.95rem;
     }
 
     .contact-section {
@@ -751,35 +774,297 @@
 
   <section id="portfolio" class="portfolio-section">
     <h2>Featured Projects</h2>
-    <p class="section-desc">A selection of projects that showcase innovation, technical excellence, and real-world impact.</p>
+    <p class="section-desc">A collection of 18 projects showcasing innovation, technical excellence, and real-world impact.</p>
     <div class="portfolio-grid">
-      <div class="project">
-        <div class="project-image">📚</div>
+
+      <div class="project-card">
+        <div class="project-icon">🌐</div>
         <div class="project-content">
-          <h3>LearnX</h3>
+          <h3>LovelyAayush4U Website</h3>
           <div class="project-services">
-            <span class="service-badge">EdTech</span>
-            <span class="service-badge">AI/ML</span>
-            <span class="service-badge">Platform</span>
+            <span class="service-badge">HTML/CSS/JS</span>
+            <span class="service-badge">Portfolio</span>
           </div>
-          <p class="project-desc">An innovative AI-powered learning platform designed to personalize education and make learning more engaging, accessible, and effective for students.</p>
-          <a href="#contact" class="project-link">Learn More</a>
+          <p class="project-short-desc">Professional portfolio with advanced animations</p>
+          <button class="project-link" onclick="toggleDetails(this)">Learn More</button>
+        </div>
+        <div class="project-details">
+          <p>A single-file HTML/CSS/JS portfolio website with advanced animations, interactive UI, and YouTube integration. Designed to look like a big-company professional site while staying in one file.</p>
         </div>
       </div>
 
-      <div class="project">
-        <div class="project-image">💚</div>
+      <div class="project-card">
+        <div class="project-icon">📚</div>
         <div class="project-content">
-          <h3>HopePulse</h3>
+          <h3>Aswathama Classes Website</h3>
           <div class="project-services">
-            <span class="service-badge">Healthcare</span>
+            <span class="service-badge">Web Design</span>
+            <span class="service-badge">Education</span>
+          </div>
+          <p class="project-short-desc">Modern tuition website with Windows-11 style</p>
+          <button class="project-link" onclick="toggleDetails(this)">Learn More</button>
+        </div>
+        <div class="project-details">
+          <p>A gift website for your tuition sir with a modern Windows-11-style startup animation, class details, and social media integration.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">📰</div>
+        <div class="project-content">
+          <h3>V Network Regd – News Website</h3>
+          <div class="project-services">
+            <span class="service-badge">News</span>
+            <span class="service-badge">Publishing</span>
+          </div>
+          <p class="project-short-desc">Complete news publishing platform</p>
+          <button class="project-link" onclick="toggleDetails(this)">Learn More</button>
+        </div>
+        <div class="project-details">
+          <p>A complete news publishing website for articles, updates, and announcements.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">🤝</div>
+        <div class="project-content">
+          <h3>NGO Connector Website</h3>
+          <div class="project-services">
+            <span class="service-badge">Platform</span>
+            <span class="service-badge">Social Impact</span>
+          </div>
+          <p class="project-short-desc">Connecting NGOs with people who need help</p>
+          <button class="project-link" onclick="toggleDetails(this)">Learn More</button>
+        </div>
+        <div class="project-details">
+          <p>A platform connecting NGOs with people. Features include: search by category/city, WhatsApp/phone contact, donation options, and admin features to add/update NGO listings.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">🔐</div>
+        <div class="project-content">
+          <h3>Class-Only Website</h3>
+          <div class="project-services">
+            <span class="service-badge">Flask</span>
+            <span class="service-badge">PostgreSQL</span>
+          </div>
+          <p class="project-short-desc">Secure platform for class resources</p>
+          <button class="project-link" onclick="toggleDetails(this)">Learn More</button>
+        </div>
+        <div class="project-details">
+          <p>A secure platform for your class with password protection, user login, and an admin panel to upload new resources and notes.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">🧮</div>
+        <div class="project-content">
+          <h3>Advanced Math Quiz Website</h3>
+          <div class="project-services">
+            <span class="service-badge">Django</span>
+            <span class="service-badge">EdTech</span>
+          </div>
+          <p class="project-short-desc">Professional learning platform with gamification</p>
+          <button class="project-link" onclick="toggleDetails(this)">Learn More</button>
+        </div>
+        <div class="project-details">
+          <p>A full professional learning platform with categories, progress tracking, leaderboard, badges, notifications, user profiles, and admin panel. Designed with animations and weekly updates.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">📐</div>
+        <div class="project-content">
+          <h3>Advanced Math Proof Website</h3>
+          <div class="project-services">
+            <span class="service-badge">Flask</span>
+            <span class="service-badge">Math</span>
+          </div>
+          <p class="project-short-desc">Showcase and upload math proofs</p>
+          <button class="project-link" onclick="toggleDetails(this)">Learn More</button>
+        </div>
+        <div class="project-details">
+          <p>A website built to upload and showcase math proofs. Fully functional and ready for hosting.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">🎨</div>
+        <div class="project-content">
+          <h3>Portfolio/3D Startup Prompts</h3>
+          <div class="project-services">
+            <span class="service-badge">Design</span>
+            <span class="service-badge">3D</span>
+          </div>
+          <p class="project-short-desc">Custom prompts for professional websites</p>
+          <button class="project-link" onclick="toggleDetails(this)">Learn More</button>
+        </div>
+        <div class="project-details">
+          <p>Multiple custom prompts created to generate professional, 3D-styled, animated, startup-level portfolio websites.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">🔄</div>
+        <div class="project-content">
+          <h3>NeuraSync / BrowserSync</h3>
+          <div class="project-services">
+            <span class="service-badge">Innovation</span>
+            <span class="service-badge">Sync</span>
+          </div>
+          <p class="project-short-desc">Browser-sync concept with documentation</p>
+          <button class="project-link" onclick="toggleDetails(this)">Learn More</button>
+        </div>
+        <div class="project-details">
+          <p>Your own browser-sync concept with documentation and a project file generated via Gamma.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">🤖</div>
+        <div class="project-content">
+          <h3>Custom AI Personality Model</h3>
+          <div class="project-services">
+            <span class="service-badge">Ollama</span>
+            <span class="service-badge">AI/ML</span>
+          </div>
+          <p class="project-short-desc">Fine-tuned custom AI personality</p>
+          <button class="project-link" onclick="toggleDetails(this)">Learn More</button>
+        </div>
+        <div class="project-details">
+          <p>Experimented with inserting real chat data into Modelfiles to fine-tune a custom AI personality model.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">💚</div>
+        <div class="project-content">
+          <h3>HopePulse AI Prototype</h3>
+          <div class="project-services">
             <span class="service-badge">AI</span>
             <span class="service-badge">Mental Health</span>
           </div>
-          <p class="project-desc">A compassionate mental health support platform leveraging AI to provide personalized assistance, resources, and hope to those who need it most.</p>
-          <a href="#contact" class="project-link">Learn More</a>
+          <p class="project-short-desc">AI for mental health detection</p>
+          <button class="project-link" onclick="toggleDetails(this)">Learn More</button>
+        </div>
+        <div class="project-details">
+          <p>Initial AI idea for integrating mental-health detection into your wearable bracelet concept.</p>
         </div>
       </div>
+
+      <div class="project-card">
+        <div class="project-icon">📱</div>
+        <div class="project-content">
+          <h3>Python Math Website + App</h3>
+          <div class="project-services">
+            <span class="service-badge">Python</span>
+            <span class="service-badge">Mobile</span>
+          </div>
+          <p class="project-short-desc">Math platform with Play Store app plans</p>
+          <button class="project-link" onclick="toggleDetails(this)">Learn More</button>
+        </div>
+        <div class="project-details">
+          <p>A Python-based advanced math question website with plans for a Play Store app. Includes animations, professional UI, and AI integration ideas.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">🧪</div>
+        <div class="project-content">
+          <h3>Formula-Making Practice Set</h3>
+          <div class="project-services">
+            <span class="service-badge">Chemistry</span>
+            <span class="service-badge">Education</span>
+          </div>
+          <p class="project-short-desc">Class 9 Chemistry practice problems</p>
+          <button class="project-link" onclick="toggleDetails(this)">Learn More</button>
+        </div>
+        <div class="project-details">
+          <p>Created multiple custom formula-making numerical problems for chemistry elements 1–30.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">🦸</div>
+        <div class="project-content">
+          <h3>Math Hero Comic-Style Trailer</h3>
+          <div class="project-services">
+            <span class="service-badge">Creative</span>
+            <span class="service-badge">Animation</span>
+          </div>
+          <p class="project-short-desc">Promotional animated trailer concept</p>
+          <button class="project-link" onclick="toggleDetails(this)">Learn More</button>
+        </div>
+        <div class="project-details">
+          <p>A promotional comic-style animated trailer concept for the Advanced Math Quiz platform.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">🎤</div>
+        <div class="project-content">
+          <h3>HopePulse 15-Minute Speech</h3>
+          <div class="project-services">
+            <span class="service-badge">Public Speaking</span>
+            <span class="service-badge">VenuDhwani</span>
+          </div>
+          <p class="project-short-desc">Stage speech on emotional awareness</p>
+          <button class="project-link" onclick="toggleDetails(this)">Learn More</button>
+        </div>
+        <div class="project-details">
+          <p>A stage speech created with your cousin for VenuDhwani covering emotional awareness and HopePulse innovation.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">📻</div>
+        <div class="project-content">
+          <h3>HopePulse Radio Interview</h3>
+          <div class="project-services">
+            <span class="service-badge">Media</span>
+            <span class="service-badge">Interview</span>
+          </div>
+          <p class="project-short-desc">45-minute radio interview script</p>
+          <button class="project-link" onclick="toggleDetails(this)">Learn More</button>
+        </div>
+        <div class="project-details">
+          <p>A full conversational script for a long-form radio interview about HopePulse.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">⌚</div>
+        <div class="project-content">
+          <h3>HopePulse Wearable Bracelet</h3>
+          <div class="project-services">
+            <span class="service-badge">Innovation</span>
+            <span class="service-badge">Wearable</span>
+          </div>
+          <p class="project-short-desc">Flagship mental health wearable device</p>
+          <button class="project-link" onclick="toggleDetails(this)">Learn More</button>
+        </div>
+        <div class="project-details">
+          <p>Your flagship innovation: a bracelet that detects people nearby who may be emotionally distressed or suicidal and alerts the wearer with a gentle pulse.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">🌱</div>
+        <div class="project-content">
+          <h3>Sustainable Futures Project</h3>
+          <div class="project-services">
+            <span class="service-badge">Science</span>
+            <span class="service-badge">Competition</span>
+          </div>
+          <p class="project-short-desc">Interschool science competition project</p>
+          <button class="project-link" onclick="toggleDetails(this)">Learn More</button>
+        </div>
+        <div class="project-details">
+          <p>Your interschool science competition project based on the theme "Sustainable Futures."</p>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -794,10 +1079,19 @@
   </section>
 
   <footer>
-    <p>&copy; 2024 Aayush Patil. Designed & Built with passion.</p>
+    <p>&copy; 2025 Aayush Patil. Designed & Built with passion.</p>
   </footer>
 
   <script>
+    // Toggle project details
+    function toggleDetails(button) {
+      const card = button.closest('.project-card');
+      const details = card.querySelector('.project-details');
+      button.classList.toggle('active');
+      details.classList.toggle('active');
+      button.textContent = details.classList.contains('active') ? 'Show Less' : 'Learn More';
+    }
+
     // Smooth scroll behavior
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
